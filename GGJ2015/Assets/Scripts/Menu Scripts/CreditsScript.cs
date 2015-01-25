@@ -10,7 +10,6 @@ public class CreditsScript : MonoBehaviour {
 	public float scrollVelocity;
 	public GameObject mainMenu;
 	public GameObject creditsMenu;
-	public Transform transform;
 
 	// Update is called once per frame
 	public void Update ()

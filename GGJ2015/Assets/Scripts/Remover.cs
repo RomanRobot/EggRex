@@ -9,13 +9,15 @@ public class Remover : MonoBehaviour
 		if(col.gameObject.tag == "Player")
 		{
 			// .. stop the camera tracking the player
-			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().enabled = false;
+            GameObject mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+            mainCamera.transform.parent = mainCamera.transform.parent.transform.parent;
+			mainCamera.GetComponent<CameraFollow>().enabled = false;
 
-			// .. stop the Health Bar following the player
-			if(GameObject.FindGameObjectWithTag("HealthBar").activeSelf)
-			{
-				GameObject.FindGameObjectWithTag("HealthBar").SetActive(false);
-			}
+			//// .. stop the Health Bar following the player
+			//if(GameObject.FindGameObjectWithTag("HealthBar").activeSelf)
+			//{
+			//	GameObject.FindGameObjectWithTag("HealthBar").SetActive(false);
+			//}
 
 			// ... destroy the player.
 			Destroy (col.gameObject);
