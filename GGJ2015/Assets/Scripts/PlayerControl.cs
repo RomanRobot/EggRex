@@ -35,6 +35,7 @@ public class PlayerControl : MonoBehaviour
 	public float tauntProbability = 50f;	// Chance of a taunt happening.
 	public float tauntDelay = 1f;			// Delay for when the taunt should happen.
 
+    public AudioClip rollingEgg;
 
 	//private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
