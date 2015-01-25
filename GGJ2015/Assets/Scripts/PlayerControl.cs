@@ -3,6 +3,13 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
+	[System.Serializable]
+	public class StateTraits
+	{
+		public GameObject anim;
+		public Collider2D collision;
+	}
+
 	[HideInInspector]
 	public bool facingRight = true;			// For determining which way the player is currently facing.
 	[HideInInspector]
@@ -28,12 +35,25 @@ public class PlayerControl : MonoBehaviour
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
 
+	//Animation objects
+	public StateTraits eggTraits;
+	public StateTraits rexTraits;
+	private GameObject currAnim;
+	private Collider2D currCollision;
+
+	//Pickup objects
+	public GameObject jumpCollectable;
+	public GameObject dashCollectable;
+	bool jumpEnabled = false;
+	bool dashEnabled = false;
 
 	void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
 		anim = GetComponent<Animator>();
+		currAnim = eggTraits.anim;
+		currCollision = eggTraits.collision;
 	}
 
 
@@ -81,35 +101,49 @@ public class PlayerControl : MonoBehaviour
 			// ... flip the player.
 			Flip();
 
-		// If the player should jump...
-		if(jump)
+		if (eggTraits.anim == currAnim)
 		{
-			// Set the Jump animator trigger parameter.
-			//anim.SetTrigger("Jump");
-
-			// Play a random jump audio clip.
-			int i = Random.Range(0, jumpClips.Length);
-			AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
-
-			// Add a vertical force to the player.
-			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-
-			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
-			jump = false;
+			if(h > 0)
+			{
+				transform.Rotate(Vector3.forward * -30);
+			}
+			else if (h < 0)
+			{
+				transform.Rotate(Vector3.forward * 30);
+			}
 		}
+		else
+		{
+			// If the player should jump...
+			if (jump && jumpEnabled)
+			{
+				// Set the Jump animator trigger parameter.
+				//anim.SetTrigger("Jump");
 
-        if(dash)
-        {
-            Vector2 force = new Vector2(dashForce, 0f);
+				// Play a random jump audio clip.
+				int i = Random.Range(0, jumpClips.Length);
+				AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
-            if (!facingRight)
-                force.x *= -1f;
+				// Add a vertical force to the player.
+				rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 
-            rigidbody2D.AddForce(force, ForceMode2D.Impulse);
+				// Make sure the player can't jump again until the jump conditions from Update are satisfied.
+				jump = false;
+			}
+
+			if (dash && dashEnabled)
+			{
+				Vector2 force = new Vector2(dashForce, 0f);
+
+				if (!facingRight)
+					force.x *= -1f;
+
+				rigidbody2D.AddForce(force, ForceMode2D.Impulse);
 
 
-            dash = false;
-        }
+				dash = false;
+			}
+		}
 	}
 
 
@@ -127,12 +161,45 @@ public class PlayerControl : MonoBehaviour
 
     void OnCollisionEnter2D( Collision2D collision )
     {
-        if( collision.gameObject.layer == LayerMask.NameToLayer("Ground") )
-            Instantiate(landEffect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        gameObject.GetComponent<TrailRenderer>().enabled = false;
-    }
+		if (eggTraits.anim != currAnim)
+		{
+			if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+				Instantiate(landEffect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+			gameObject.GetComponent<TrailRenderer>().enabled = false;
+			
+		}
 
+		if(collision.gameObject == jumpCollectable)
+		{
+			UnityEngine.GameObject.Destroy(collision.gameObject);
+			jumpEnabled = true;
+			Evolve(EvolutionState.Jump);
+		}
+		if(collision.gameObject == dashCollectable)
+		{
+			UnityEngine.GameObject.Destroy(collision.gameObject);
+			dashEnabled = true;
+		}
+	}
 
+	public enum EvolutionState { Egg, Jump, Dash}
+
+	public void Evolve (EvolutionState state)
+	{
+		currAnim.SetActive(false);
+		currCollision.enabled = false;
+		if (state == EvolutionState.Jump)
+		{
+			currCollision = rexTraits.collision;
+			currAnim = rexTraits.anim;
+			transform.rotation = Quaternion.Euler(Vector3.zero);
+
+			transform.localScale = new Vector3(3, 3, 1);
+			transform.localPosition = new Vector3(transform.position.x, transform.position.y + 6.73f, transform.position.z);
+		}
+		currCollision.enabled = true;
+		currAnim.SetActive(true);
+	}
 	//public IEnumerator Taunt()
 	//{
 	//	// Check the random chance of taunting.
