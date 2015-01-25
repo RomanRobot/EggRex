@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
     public bool dash = false;
     public ParticleSystem jumpEffect;
     public Sprite landEffect;
+    public bool isEgg = true;
 
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
@@ -186,6 +187,8 @@ public class PlayerControl : MonoBehaviour
 
 	public void Evolve (EvolutionState state)
 	{
+
+        isEgg = false;
 		currAnim.SetActive(false);
 		currCollision.enabled = false;
 		if (state == EvolutionState.Jump)
