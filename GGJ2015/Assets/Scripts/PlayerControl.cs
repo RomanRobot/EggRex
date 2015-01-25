@@ -206,7 +206,7 @@ public class PlayerControl : MonoBehaviour
 			transform.rotation = Quaternion.Euler(Vector3.zero);
 
 			transform.localScale = new Vector3(3, 3, 1);
-			transform.localPosition = new Vector3(transform.position.x, transform.position.y + 6.73f, transform.position.z);
+			transform.localPosition = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
 		}
 		if (state == EvolutionState.Dash)
 		{

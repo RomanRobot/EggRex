@@ -118,7 +118,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &5127225
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &61059957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1853,7 +1853,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &294469008
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1975,7 +1975,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &302535813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2538,7 +2538,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &400086014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2616,7 +2616,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &407083003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2694,7 +2694,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &418881675
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3333,7 +3333,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &530134049
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3399,7 +3399,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &530898763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3894,7 +3894,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &585025006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4139,7 +4139,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &660976153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4493,7 +4493,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &724399996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5406,7 +5406,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &822704920
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5536,7 +5536,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &826603483
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6966,7 +6966,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &919402561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7236,7 +7236,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &947214759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7884,7 +7884,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1001866544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9333,7 +9333,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1239271998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9411,7 +9411,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1241821654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10215,7 +10215,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1295740857
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10449,7 +10449,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1306506915
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10579,7 +10579,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1313155299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10759,7 +10759,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1343353039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11325,7 +11325,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1453443899
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12365,7 +12365,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1603380636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12815,7 +12815,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1745790202
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12893,7 +12893,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1747145736
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13063,7 +13063,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1753853046
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13185,7 +13185,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1771113160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13263,7 +13263,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1772723722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13689,7 +13689,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1871848620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14752,7 +14752,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &2034410219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14958,7 +14958,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &2061395080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15165,7 +15165,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &2069986208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15558,7 +15558,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &2086931165
 MonoBehaviour:
   m_ObjectHideFlags: 0
