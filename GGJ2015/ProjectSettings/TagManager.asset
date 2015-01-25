@@ -47,6 +47,10 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
+  - name: Slime
+    userID: 6
+    uniqueID: 660028323
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0
