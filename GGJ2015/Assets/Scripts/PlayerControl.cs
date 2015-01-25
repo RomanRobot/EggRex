@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour
 
     public AudioClip rollingEgg;
 
-	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
+	//private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 
@@ -179,15 +179,16 @@ public class PlayerControl : MonoBehaviour
 				Instantiate(landEffect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 			gameObject.GetComponent<TrailRenderer>().enabled = false;
 		}
-		if(collision.gameObject == jumpCollectable)
+	}
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject == jumpCollectable && !jumpEnabled)
 		{
-			UnityEngine.GameObject.Destroy(collision.gameObject);
 			jumpEnabled = true;
 			Evolve(EvolutionState.Jump);
 		}
-		if(collision.gameObject == dashCollectable)
+		if (collision.gameObject == dashCollectable && !dashEnabled)
 		{
-			UnityEngine.GameObject.Destroy(collision.gameObject);
 			Evolve(EvolutionState.Dash);
 			dashEnabled = true;
 		}
@@ -213,7 +214,7 @@ public class PlayerControl : MonoBehaviour
 			transform.rotation = Quaternion.Euler(Vector3.zero);
 
 			transform.localScale = new Vector3(3, 3, 1);
-			transform.localPosition = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
+			//transform.localPosition = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
 		}
 		if (state == EvolutionState.Dash)
 		{
