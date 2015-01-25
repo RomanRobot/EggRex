@@ -6367,8 +6367,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 2137621420}
   parallaxScale: .5
   parallaxReductionFactor: .400000006
