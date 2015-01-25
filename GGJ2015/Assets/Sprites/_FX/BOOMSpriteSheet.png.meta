@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: 7baa431cb2601ec4196fb7c66ed5c53f
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BOOMSpriteSheet_0
+    21300002: BOOMSpriteSheet_1
+    21300004: BOOMSpriteSheet_2
+    21300006: BOOMSpriteSheet_3
+    21300008: BOOMSpriteSheet_4
+    21300010: BOOMSpriteSheet_5
+    21300012: BOOMSpriteSheet_6
+    21300014: BOOMSpriteSheet_7
+    21300016: BOOMSpriteSheet_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 4
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BOOMSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 87
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BOOMSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 87
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BOOMSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 88
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BOOMSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 90
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BOOMSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BOOMSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 55
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BOOMSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 57
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BOOMSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BOOMSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 35
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
