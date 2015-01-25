@@ -85,8 +85,6 @@ public class PlayerControl : MonoBehaviour
 	{
 		// Cache the horizontal input.
 		float h = Input.GetAxis("Horizontal");
-        if (isEgg)
-            h *= 0.25f;
 
 		if (eggTraits != currTraits)
 		{

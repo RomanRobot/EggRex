@@ -3,9 +3,6 @@ using System.Collections;
 
 public class Remover : MonoBehaviour
 {
-	public GameObject splash;
-
-
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		// If the player hits the trigger...
@@ -20,8 +17,6 @@ public class Remover : MonoBehaviour
 				GameObject.FindGameObjectWithTag("HealthBar").SetActive(false);
 			}
 
-			// ... instantiate the splash where the player falls in.
-			Instantiate(splash, col.transform.position, transform.rotation);
 			// ... destroy the player.
 			Destroy (col.gameObject);
 			// ... reload the level.
@@ -29,9 +24,6 @@ public class Remover : MonoBehaviour
 		}
 		else
 		{
-			// ... instantiate the splash where the enemy falls in.
-			Instantiate(splash, col.transform.position, transform.rotation);
-
 			// Destroy the enemy.
 			Destroy (col.gameObject);	
 		}
