@@ -13,6 +13,7 @@ public class JumpingPiranha : MonoBehaviour {
 
     public float jumpDuration = 1f;
     public float hideDuration = 1f;
+    public float numberOfFlips = 1f;
 
     private Vector3 initialPosition;
     private SpriteRenderer spriteRenderer;
@@ -41,7 +42,7 @@ public class JumpingPiranha : MonoBehaviour {
 
             // Set jump transform
             transform.position = initialPosition + new Vector3(0f, v * jumpHeight, 0f);
-            transform.rotation = Quaternion.Euler(0f, 0f, 360.0f * v);
+            transform.rotation = Quaternion.Euler(0f, 0f, 270.0f + 180.0f * t * numberOfFlips);
         }
         else
         {
