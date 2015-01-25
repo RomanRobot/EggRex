@@ -28,7 +28,7 @@ public class PlayerControl : MonoBehaviour
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
-	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
+	//public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
     public float jumpForce = 1000f;			// Amount of force added when the player jumps.
     public float dashForce = 1000f;			// Amount of force added when the player dashes.
 	public AudioClip[] taunts;				// Array of clips for when the player taunts.
@@ -36,6 +36,7 @@ public class PlayerControl : MonoBehaviour
 	public float tauntDelay = 1f;			// Delay for when the taunt should happen.
 
     public AudioClip rollingEgg;
+    public AudioClip jumpSoundRawrr;
 
 	//private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
@@ -131,10 +132,11 @@ public class PlayerControl : MonoBehaviour
 			{
 				// Set the Jump animator trigger parameter.
 				//anim.SetTrigger("Jump");
+                AudioSource.PlayClipAtPoint(jumpSoundRawrr, transform.position);
 
 				// Play a random jump audio clip.
-				int i = Random.Range(0, jumpClips.Length);
-				AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+				//int i = Random.Range(0, jumpClips.Length);
+				//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
 				// Add a vertical force to the player.
 				rigidbody2D.AddForce(new Vector2(0f, jumpForce));
