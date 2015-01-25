@@ -21,6 +21,7 @@ public class PlayerControl : MonoBehaviour
     public Sprite landEffect;
 	public Animator rexAnim;					// Reference to the player's Rex animator component.
 	public Animator roboAnim;					// Reference to the player's Robo animator component.
+    public bool isEgg = true;
 
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
@@ -69,10 +70,13 @@ public class PlayerControl : MonoBehaviour
 				jump = true;
 			
 		}
-        if (Input.GetButtonDown("Dash"))
+        if (isEgg == false)
         {
-            dash = true;
-            gameObject.GetComponent<TrailRenderer>().enabled = true;
+            if (Input.GetButtonDown("Dash"))
+            {
+                dash = true;
+                gameObject.GetComponent<TrailRenderer>().enabled = true;
+            }
         }
     }
 
@@ -81,6 +85,8 @@ public class PlayerControl : MonoBehaviour
 	{
 		// Cache the horizontal input.
 		float h = Input.GetAxis("Horizontal");
+        if (isEgg)
+            h *= 0.25f;
 
 		if (eggTraits != currTraits)
 		{
@@ -110,11 +116,11 @@ public class PlayerControl : MonoBehaviour
 		{
 			if(h > 0)
 			{
-				transform.Rotate(Vector3.forward * -30);
+				transform.Rotate(Vector3.forward * -15);
 			}
 			else if (h < 0)
 			{
-				transform.Rotate(Vector3.forward * 30);
+				transform.Rotate(Vector3.forward * 15);
 			}
 		}
 		else
@@ -192,6 +198,10 @@ public class PlayerControl : MonoBehaviour
 	{
 		currTraits.animObject.SetActive(false);
 		currTraits.collision.enabled = false;
+
+        isEgg = false;
+		//currAnim.SetActive(false);
+		//currCollision.enabled = false;
 		if (state == EvolutionState.Jump)
 		{
 			currTraits = rexTraits ;
