@@ -23,6 +23,8 @@ public class PlayerControl : MonoBehaviour
 	public Animator roboAnim;					// Reference to the player's Robo animator component.
     public bool isEgg = true;
 
+    public GameObject evolveEffect;
+
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
@@ -199,6 +201,10 @@ public class PlayerControl : MonoBehaviour
 		currTraits.collision.enabled = false;
 
         isEgg = false;
+
+        Instantiate(evolveEffect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+
+
 		//currAnim.SetActive(false);
 		//currCollision.enabled = false;
 		if (state == EvolutionState.Jump)

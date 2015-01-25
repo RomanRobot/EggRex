@@ -13227,7 +13227,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434682, guid: 35779f637b4abf149a4e2775c2e08fe5, type: 2}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35779f637b4abf149a4e2775c2e08fe5, type: 2}
@@ -15861,6 +15861,7 @@ MonoBehaviour:
   rexAnim: {fileID: 830854175}
   roboAnim: {fileID: 1082905758}
   isEgg: 1
+  evolveEffect: {fileID: 169852, guid: 0337d5caf6cded44397a396d7e9064cb, type: 2}
   moveForce: 365
   maxSpeed: 8
   jumpClips:
