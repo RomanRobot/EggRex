@@ -42,7 +42,8 @@ public class JumpingPiranha : MonoBehaviour {
 
             // Set jump transform
             transform.position = initialPosition + new Vector3(0f, v * jumpHeight, 0f);
-            transform.rotation = Quaternion.Euler(0f, 0f, 270.0f + 180.0f * t * numberOfFlips);
+            //transform.rotation = Quaternion.Euler(0f, 0f, 270.0f + 180.0f * t * numberOfFlips); // Working
+            transform.rotation = Quaternion.Euler(0f, 0f, 360.0f * v * numberOfFlips);
         }
         else
         {
