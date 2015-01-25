@@ -6,7 +6,8 @@ public class PlayerControl : MonoBehaviour
 	[System.Serializable]
 	public class StateTraits
 	{
-		public GameObject anim;
+		public Animator animator;
+		public GameObject animObject;
 		public Collider2D collision;
 	}
 
@@ -18,6 +19,8 @@ public class PlayerControl : MonoBehaviour
     public bool dash = false;
     public ParticleSystem jumpEffect;
     public Sprite landEffect;
+	public Animator rexAnim;					// Reference to the player's Rex animator component.
+	public Animator roboAnim;					// Reference to the player's Robo animator component.
 
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
@@ -33,13 +36,12 @@ public class PlayerControl : MonoBehaviour
 	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
-	private Animator anim;					// Reference to the player's animator component.
 
 	//Animation objects
 	public StateTraits eggTraits;
 	public StateTraits rexTraits;
-	private GameObject currAnim;
-	private Collider2D currCollision;
+	public StateTraits roboTraits;
+	public StateTraits currTraits;
 
 	//Pickup objects
 	public GameObject jumpCollectable;
@@ -51,21 +53,22 @@ public class PlayerControl : MonoBehaviour
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
-		anim = GetComponent<Animator>();
-		currAnim = eggTraits.anim;
-		currCollision = eggTraits.collision;
+		currTraits = eggTraits;
 	}
 
 
 	void Update()
 	{
-		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
-
-		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump") && grounded)
-			jump = true;
-
+		if (eggTraits != currTraits)
+		{
+			// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
+			grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+			currTraits.animator.SetBool("Grounded", grounded);
+			// If the jump button is pressed and the player is grounded then the player should jump.
+			if (Input.GetButtonDown("Jump") && grounded)
+				jump = true;
+			
+		}
         if (Input.GetButtonDown("Dash"))
         {
             dash = true;
@@ -79,9 +82,11 @@ public class PlayerControl : MonoBehaviour
 		// Cache the horizontal input.
 		float h = Input.GetAxis("Horizontal");
 
-		// The Speed animator parameter is set to the absolute value of the horizontal input.
-		anim.SetFloat("Speed", Mathf.Abs(h));
-
+		if (eggTraits != currTraits)
+		{
+			// The Speed animator parameter is set to the absolute value of the horizontal input.
+			currTraits.animator.SetFloat("Speed", Mathf.Abs(h));			
+		}
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 		if(h * rigidbody2D.velocity.x < maxSpeed)
 			// ... add a force to the player.
@@ -101,7 +106,7 @@ public class PlayerControl : MonoBehaviour
 			// ... flip the player.
 			Flip();
 
-		if (eggTraits.anim == currAnim)
+		if (eggTraits == currTraits)
 		{
 			if(h > 0)
 			{
@@ -161,14 +166,12 @@ public class PlayerControl : MonoBehaviour
 
     void OnCollisionEnter2D( Collision2D collision )
     {
-		if (eggTraits.anim != currAnim)
+		if (eggTraits != currTraits)
 		{
 			if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
 				Instantiate(landEffect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
 			gameObject.GetComponent<TrailRenderer>().enabled = false;
-			
 		}
-
 		if(collision.gameObject == jumpCollectable)
 		{
 			UnityEngine.GameObject.Destroy(collision.gameObject);
@@ -178,6 +181,7 @@ public class PlayerControl : MonoBehaviour
 		if(collision.gameObject == dashCollectable)
 		{
 			UnityEngine.GameObject.Destroy(collision.gameObject);
+			Evolve(EvolutionState.Dash);
 			dashEnabled = true;
 		}
 	}
@@ -186,19 +190,22 @@ public class PlayerControl : MonoBehaviour
 
 	public void Evolve (EvolutionState state)
 	{
-		currAnim.SetActive(false);
-		currCollision.enabled = false;
+		currTraits.animObject.SetActive(false);
+		currTraits.collision.enabled = false;
 		if (state == EvolutionState.Jump)
 		{
-			currCollision = rexTraits.collision;
-			currAnim = rexTraits.anim;
+			currTraits = rexTraits ;
 			transform.rotation = Quaternion.Euler(Vector3.zero);
 
 			transform.localScale = new Vector3(3, 3, 1);
 			transform.localPosition = new Vector3(transform.position.x, transform.position.y + 6.73f, transform.position.z);
 		}
-		currCollision.enabled = true;
-		currAnim.SetActive(true);
+		if (state == EvolutionState.Dash)
+		{
+			currTraits = roboTraits;
+		}
+		currTraits.collision.enabled = true;
+		currTraits.animObject.SetActive(true);
 	}
 	//public IEnumerator Taunt()
 	//{
