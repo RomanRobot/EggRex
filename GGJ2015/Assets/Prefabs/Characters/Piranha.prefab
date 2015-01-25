@@ -66,11 +66,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 133486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cacbffc4b1052ba4790f4c62bebea8bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d774c3e0fe6ea64ba6e9adaf4084154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 5
-  jumpDuration: 2
+  jumpDuration: 1
   hideDuration: 1
   numberOfFlips: 1
 --- !u!114 &11433486
