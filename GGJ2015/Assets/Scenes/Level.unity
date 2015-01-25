@@ -127,7 +127,7 @@ Transform:
   m_LocalScale: {x: 1.92500007, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!1 &177629223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,7 +3764,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 2086931159}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!95 &1082905758
 Animator:
   serializedVersion: 3
@@ -4019,7 +4019,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: m_BackGroundColor.r
@@ -4039,11 +4039,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: orthographic size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
+      propertyPath: evolvedCameraSize
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64b12b15baf9644af9f0651e6705f0ef, type: 2}
@@ -6009,6 +6013,8 @@ MonoBehaviour:
   ySmooth: 2
   maxXAndY: {x: 5, y: 5}
   minXAndY: {x: -5, y: -5}
+  eggCameraSize: 10
+  evolvedCameraSize: 15
 --- !u!124 &1972830849
 Behaviour:
   m_ObjectHideFlags: 0
@@ -6046,7 +6052,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6365,8 +6371,8 @@ MonoBehaviour:
   dash: 0
   jumpEffect: {fileID: 123416, guid: f628af1d007cf474bb7ffda3e9555092, type: 2}
   landEffect: {fileID: 100000, guid: 42404bf7d14c342f69690c9961a7530d, type: 2}
-  rexAnim: {fileID: 830854175}
-  roboAnim: {fileID: 1082905758}
+  rexAnim: {fileID: 0}
+  roboAnim: {fileID: 0}
   isEgg: 1
   moveForce: 365
   maxSpeed: 8

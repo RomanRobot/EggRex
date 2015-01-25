@@ -10,7 +10,8 @@ public class CameraFollow : MonoBehaviour
 	public Vector2 maxXAndY;		// The maximum x and y coordinates the camera can have.
 	public Vector2 minXAndY;		// The minimum x and y coordinates the camera can have.
     private bool hasEvolved = false;
-
+    public float eggCameraSize = 10;
+    public float evolvedCameraSize = 15;
 
 	private Transform player;		// Reference to the player's transform.
 
@@ -19,7 +20,7 @@ public class CameraFollow : MonoBehaviour
 	{
 		// Setting up the reference.
 		player = GameObject.FindGameObjectWithTag("Player").transform;
-        
+        GetComponent<Camera>().orthographicSize = eggCameraSize;
 	}
 
 
@@ -70,9 +71,9 @@ public class CameraFollow : MonoBehaviour
         PlayerControl tmp = GetComponentInParent<PlayerControl>();
         if (!hasEvolved && tmp.isEgg == false)
         {
-           GetComponentInParent<Camera>().orthographicSize = Mathf.Lerp(GetComponentInParent<Camera>().orthographicSize, 6, xSmooth * Time.deltaTime);
+            GetComponentInParent<Camera>().orthographicSize = Mathf.Lerp(GetComponentInParent<Camera>().orthographicSize, evolvedCameraSize, xSmooth * Time.deltaTime);
            //float targetY = Mathf.Lerp(transform.position.y, player.position.y, ySmooth * Time.deltaTime);
-           if (GetComponentInParent<Camera>().orthographicSize == 6.0f)
+           if (GetComponentInParent<Camera>().orthographicSize == evolvedCameraSize)
            {
                hasEvolved = true;
            }
